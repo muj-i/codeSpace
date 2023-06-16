@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:stutner/app_drawer.dart';
+import 'package:stutner/note_taking.dart';
+import 'package:stutner/subject_organizer.dart';
+
+import 'bottom_nav_bar.dart';
 
 class StutnerHomePage extends StatefulWidget {
   const StutnerHomePage({super.key});
@@ -13,36 +18,43 @@ class _StutnerHomePageState extends State<StutnerHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Stutner',
           style: TextStyle(fontSize: 24),
         ),
-      ),
-      body: Column(
-        children: [
-          Center(
-            child: Text("mm"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.person_3,
+            ),
           ),
         ],
       ),
-      drawer: Drawer(
-
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month_sharp), label: 'Calneder'),
-          BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings_suggest_rounded), label: 'Preferance'),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const SubjectOrganizerPage()));
+            },
+            child: const Text('go to sub org'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const NoteTakingPage()));
+            },
+            child: const Text('go to note'),
+          ),
+          const Center(
+            child: Text("homeee"),
+          ),
         ],
       ),
+      drawer: const AppDrawer(),
+
+      bottomNavigationBar: StutnerBottomNavBar(),
     );
   }
 }
