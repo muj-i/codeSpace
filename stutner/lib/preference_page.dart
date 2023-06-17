@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'app_drawer.dart';
 import 'bottom_nav_bar.dart';
 
-class NoteTakingPage extends StatefulWidget {
-  const NoteTakingPage({super.key});
+class PreferencePage extends StatefulWidget {
+  const PreferencePage({super.key});
 
   @override
-  State<NoteTakingPage> createState() => _NoteTakingPageState();
+  State<PreferencePage> createState() => _PreferencePageState();
 }
 
-class _NoteTakingPageState extends State<NoteTakingPage> {
+class _PreferencePageState extends State<PreferencePage> {
 
 
   @override

@@ -11,11 +11,13 @@ class SubjectOrganizerPage extends StatefulWidget {
 }
 
 class _SubjectOrganizerPageState extends State<SubjectOrganizerPage> {
-  int _currentIndex = 1;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      ////
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         title: const Text(
           'Subject Organizer',
@@ -30,15 +32,18 @@ class _SubjectOrganizerPageState extends State<SubjectOrganizerPage> {
           ),
         ],
       ),
-      body: const Column(
+      body:
+      const Column(
+
         children: [
+
           Center(
             child: Text("subject orga"),
           ),
         ],
       ),
       drawer: const AppDrawer(),
-      bottomNavigationBar: StutnerBottomNavBar(),
+      //bottomNavigationBar: const StutnerBottomNavBar(),
     );
   }
 }

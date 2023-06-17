@@ -13,7 +13,7 @@ class StutnerHomePage extends StatefulWidget {
 }
 
 class _StutnerHomePageState extends State<StutnerHomePage> {
-  int _currentIndex = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +54,7 @@ class _StutnerHomePageState extends State<StutnerHomePage> {
       ),
       drawer: const AppDrawer(),
 
-      bottomNavigationBar: StutnerBottomNavBar(),
+      bottomNavigationBar: const StutnerBottomNavBar(),
     );
   }
 }

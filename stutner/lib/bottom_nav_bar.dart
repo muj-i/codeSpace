@@ -12,8 +12,8 @@ class StutnerBottomNavBar extends StatelessWidget {
 
       },
       items: [
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month_sharp), label: 'Calneder'),
+        //const BottomNavigationBarItem(
+            //icon: Icon(Icons.calendar_month_sharp), label: 'Calneder'),
         const BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: 'Home'),
         const BottomNavigationBarItem(
             icon: Icon(Icons.settings_suggest_rounded), label: 'Preferance'),
