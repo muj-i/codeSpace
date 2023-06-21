@@ -43,7 +43,7 @@ class _SubjectOrganizerPageState extends State<SubjectOrganizerPage> {
         ],
       ),
       drawer: const AppDrawer(),
-      //bottomNavigationBar: const StutnerBottomNavBar(),
+      bottomNavigationBar: const StutnerBottomNavBar(),
     );
   }
 }
