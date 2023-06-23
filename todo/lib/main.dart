@@ -17,21 +17,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Todo',
       home: const HomeScreen(),
-      themeMode: ThemeMode.system,
+      //themeMode: myThemeMode,
       theme: ThemeData(
-          brightness: Brightness.light,
-          primarySwatch: Colors.amber,
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: Colors.greenAccent
-          )
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        useMaterial3: true,
       ),
       darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          primarySwatch: Colors.red,
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: Colors.purple
-          )
+        brightness: Brightness.dark,
+        useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
+      // theme: ThemeData(
+      //     brightness: Brightness.light,
+      //     primarySwatch: Colors.red,
+      //
+      //
+      // ),
+      // darkTheme: ThemeData(
+      //     brightness: Brightness.dark,
+      //     primarySwatch: Colors.purple,
+      //     )
+
     );
   }
 }
