@@ -1,0 +1,4 @@
+#Fri Jun 23 23:48:37 BDT 2023
+base.0=/Volumes/HDD-Z/dxProgramming/codeSpace/todo/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

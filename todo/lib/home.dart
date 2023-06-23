@@ -22,17 +22,36 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 22,
         title: const Text('Home'),
         actions: [
+          // IconButton(
+          //     icon: Icon(isDarkMode ? Icons.wb_sunny : Icons.nightlight_round),
+          //     onPressed: toggleTheme,
+          //   ),
           IconButton(
-              icon: Icon(Icons.lightbulb_outline),
+              icon: ThemeProvider.controllerOf(context).currentThemeId ==
+                      'custom_theme_dark'
+                  ? Icon(Icons.lightbulb_outline)
+                  : Icon(Icons.lightbulb_rounded),
               onPressed: () {
                 ThemeProvider.controllerOf(context).nextTheme();
               }),
           IconButton(
             onPressed: () {
               if (todos.isEmpty) {
-///////////////
-                print('emty');
-/////////////////
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Expanded(
+                          child: AlertDialog(
+                        title: Text('No item found'),
+                        actions: [
+                          TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('Okay')),
+                        ],
+                      ));
+                    });
               } else {
                 MyAletrtDialog(context);
               }

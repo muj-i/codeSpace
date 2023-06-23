@@ -7,10 +7,12 @@ import 'home.dart';
 // TODO 3 - Update the ui design of bottom sheet
 
 main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ThemeProvider(
@@ -37,46 +39,10 @@ class MyApp extends StatelessWidget {
             theme: ThemeProvider.themeOf(themeContext).data,
             title: 'Material App',
             home: HomeScreen(),
+            debugShowCheckedModeBanner: false,
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // themeMode: ThemeMode.light,
-//         // theme: ThemeData(
-//         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-//         //   useMaterial3: true,
-//         // ),
-//         // darkTheme: ThemeData(
-//         //   brightness: Brightness.dark,
-//         //   useMaterial3: true,
-//         // ),
-//         debugShowCheckedModeBanner: false,
-//         // theme: ThemeData(
-//         //     brightness: Brightness.light,
-//         //     primarySwatch: Colors.red,
-//         //
-//         //
-//         // ),
-//         // darkTheme: ThemeData(
-//         //     brightness: Brightness.dark,
-//         //     primarySwatch: Colors.purple,
-//       ),
-//     );
-//   }
-// }
