@@ -15,17 +15,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeProvider(
       themes: [
-        AppTheme
-            .light(), // This is standard light theme (id is default_light_theme)
-        AppTheme
-            .dark(), // This is standard dark theme (id is default_dark_theme)
         AppTheme(
-          id: "custom_theme", // Id(or name) of the theme(Has to be unique)
-          description: "My Custom Theme", // Description of theme
-          data: ThemeData(
-            // Real theme data
-            primaryColor: Colors.black,
-            hintColor: Colors.red,
+          data: ThemeData.light().copyWith(
+            useMaterial3: true,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          ),
+          id: 'custom_theme_light',
+          description: 'Dark Theme',
+        ),
+        AppTheme(
+          id: "custom_theme_dark",
+          description: "Dark Theme",
+          data: ThemeData.dark(
+            useMaterial3: true,
           ),
         ),
       ],
@@ -54,21 +56,8 @@ class MyApp extends StatelessWidget {
 
 
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ThemeProvider(
-//       saveThemesOnChange: true,
-//       loadThemeOnInit: true,
-//       themes: <AppTheme>[
-//         AppTheme.light(id: 'light'),
-//         AppTheme.dark(id: 'dark'),
-//       ],
-//       child: MaterialApp(
-//         title: 'Todo',
-//         home: HomeScreen(),
 
-//         // themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.light,
 //         // theme: ThemeData(
 //         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
 //         //   useMaterial3: true,
