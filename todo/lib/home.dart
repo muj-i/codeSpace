@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  //const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -12,42 +12,25 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _descriptionTEController =
       TextEditingController();
 
-  MyAletrtDialog(context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Expanded(
-              child: AlertDialog(
-            title: Text('Do you want to delete permanently🗑️?'),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    todos.clear();
-                    if (mounted) {
-                      setState(() {});
-                    }
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('Yes')),
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('No')),
-            ],
-          ));
-        });
-  }
+  List<Todo> todos = [];
 
-  bool isDarkMode = false;
+  late ThemeData _currentTheme;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentTheme = ThemeData.light();
+  }
 
   void _toggleTheme() {
     setState(() {
-      isDarkMode = !isDarkMode;
+      if (_currentTheme == ThemeData.light()) {
+        _currentTheme = ThemeData.dark();
+      } else {
+        _currentTheme = ThemeData.light();
+      }
     });
   }
-
-  List<Todo> todos = [];
 
   @override
   Widget build(BuildContext context) {
@@ -57,15 +40,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home'),
         actions: [
           IconButton(
-              icon: Icon(isDarkMode ? Icons.lightbulb_outline : Icons.cabin),
-              onPressed: () {}),
+              icon: Icon(Icons.lightbulb_outline), onPressed: _toggleTheme),
           IconButton(
             onPressed: () {
-              // todos.clear();
-              // if (mounted) {
-              //   setState(() {});
-              // }
-              MyAletrtDialog(context);
+              if (todos.isEmpty) {
+///////////////
+                print('emty');
+/////////////////
+              } else {
+                MyAletrtDialog(context);
+              }
             },
             icon: const Icon(Icons.highlight_remove),
           )
@@ -78,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: todos[index].isDone ? Colors.green : Colors.redAccent,
+              color: todos[index].isDone
+                  ? const Color.fromARGB(255, 3, 73, 39)
+                  : Colors.redAccent,
             ),
             child: ListTile(
               onLongPress: () {
@@ -271,6 +257,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           );
+        });
+  }
+
+  MyAletrtDialog(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text('Do you want to delete permanently?'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    todos.clear();
+                    if (mounted) {
+                      setState(() {});
+                    }
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('Yes')),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('No')),
+            ],
+          ));
         });
   }
 }

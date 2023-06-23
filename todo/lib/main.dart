@@ -6,17 +6,16 @@ import 'home.dart';
 // TODO 3 - Update the ui design of bottom sheet
 
 main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todo',
-      home: const HomeScreen(),
+      home: HomeScreen(),
+
       //themeMode: myThemeMode,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
@@ -37,7 +36,6 @@ class MyApp extends StatelessWidget {
       //     brightness: Brightness.dark,
       //     primarySwatch: Colors.purple,
       //     )
-
     );
   }
 }
