@@ -1,8 +1,8 @@
 version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
-options: "a99d95bfeb8367627135cca786e006f6d0f8d450d3f3c5d6ebdccd2f0bef1b29"
-build_start_time: [1687532252, 819777000]
-build_end_time: [1687532258, 512771000]
+options: "307aad9041efa732d651c347a71bb1fdda1682f0c926efa962e372948703801f"
+build_start_time: [1687535751, 969925000]
+build_end_time: [1687535769, 682398000]
 inputs:
-  "/Volumes/HDD-Z/dxProgramming/codeSpace/todo/macos/Flutter/GeneratedPluginRegistrant.swift": [1687532243, 977539776]
+  "/Volumes/HDD-Z/dxProgramming/codeSpace/todo/macos/Flutter/GeneratedPluginRegistrant.swift": [1687535726, 91769135]
   "/Volumes/HDD-Z/dxProgramming/codeSpace/todo/macos/Runner/AppDelegate.swift": [1677703634, 0]
   "/Volumes/HDD-Z/dxProgramming/codeSpace/todo/macos/Runner/MainFlutterWindow.swift": [1681121995, 932507992]

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theme_provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   //const HomeScreen({Key? key}) : super(key: key);
@@ -14,24 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Todo> todos = [];
 
-  late ThemeData _currentTheme;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentTheme = ThemeData.light();
-  }
-
-  void _toggleTheme() {
-    setState(() {
-      if (_currentTheme == ThemeData.light()) {
-        _currentTheme = ThemeData.dark();
-      } else {
-        _currentTheme = ThemeData.light();
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home'),
         actions: [
           IconButton(
-              icon: Icon(Icons.lightbulb_outline), onPressed: _toggleTheme),
+              icon: Icon(Icons.lightbulb_outline),
+              onPressed: () {
+                ThemeProvider.controllerOf(context).nextTheme();
+              }),
           IconButton(
             onPressed: () {
               if (todos.isEmpty) {
