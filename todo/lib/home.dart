@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:theme_provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,15 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 22,
         title: const Text('Home'),
         actions: [
-          // IconButton(
-          //     icon: Icon(isDarkMode ? Icons.wb_sunny : Icons.nightlight_round),
-          //     onPressed: toggleTheme,
-          //   ),
           IconButton(
               icon: ThemeProvider.controllerOf(context).currentThemeId ==
                       'custom_theme_dark'
-                  ? Icon(Icons.lightbulb_outline)
-                  : Icon(Icons.lightbulb_rounded),
+                  ? Icon(FontAwesomeIcons.lightbulb)
+                  : Icon(FontAwesomeIcons.solidLightbulb),
               onPressed: () {
                 ThemeProvider.controllerOf(context).nextTheme();
               }),
@@ -56,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 MyAletrtDialog(context);
               }
             },
-            icon: const Icon(Icons.highlight_remove),
+            icon: const Icon(FontAwesomeIcons.xmark),
           )
         ],
       ),
@@ -160,12 +157,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           );
-                          //     return Container(
-                          //       height: 200,
-                          //       child: Center(
-                          //         child: Text('Bottom Modal Sheet'),
-                          //       ),
-                          //     );
                         },
                       );
                     },
@@ -196,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           showAddNewTodoModalSheet();
         },
-        child: const Icon(Icons.add),
+        child: const Icon(FontAwesomeIcons.plus),
       ),
     );
   }
@@ -204,62 +195,70 @@ class _HomeScreenState extends State<HomeScreen> {
   void showAddNewTodoModalSheet() {
     showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
         builder: (context) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                const Text(
-                  'Add New Todo',
-                  style: TextStyle(
-                    fontSize: 22,
+          return Container(
+            height: MediaQuery.of(context).size.height * 0.75,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  const Text(
+                    'Add New Todo',
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    controller: _titleTEController,
-                    decoration: InputDecoration(
-                      labelText: 'Enter Title',
-                      hintText: 'Title',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(100),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: _titleTEController,
+                      decoration: InputDecoration(
+                        labelText: 'Enter Title',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(100),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    controller: _descriptionTEController,
-                    decoration: InputDecoration(
-                      labelText: 'Enter Description',
-                      hintText: 'Description',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(100),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: _descriptionTEController,
+                      decoration: InputDecoration(
+                        labelText: 'Enter Description',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(100),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_titleTEController.text.trim().isNotEmpty &&
-                        _descriptionTEController.text.trim().isNotEmpty) {
-                      todos.add(Todo(_titleTEController.text.trim(),
-                          _descriptionTEController.text.trim(), false));
-                      if (mounted) {
-                        setState(() {});
-                      }
-                      _titleTEController.clear();
-                      _descriptionTEController.clear();
-                      Navigator.pop(context);
-                    }
-                  },
-                  child: const Text('Add'),
-                )
-              ],
+                  SizedBox(
+                    width: 150,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_titleTEController.text.trim().isNotEmpty &&
+                            _descriptionTEController.text.trim().isNotEmpty) {
+                          todos.add(Todo(_titleTEController.text.trim(),
+                              _descriptionTEController.text.trim(), false));
+                          if (mounted) {
+                            setState(() {});
+                          }
+                          _titleTEController.clear();
+                          _descriptionTEController.clear();
+                          Navigator.pop(context);
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4, // Adjust the value as desired
+                      ),
+                      child: const Text('Add'),
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         });

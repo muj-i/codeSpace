@@ -80,6 +80,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///Users/muj/.pub-cache/hosted/pub.dev/font_awesome_flutter-10.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/muj/.pub-cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
@@ -278,7 +284,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-06-23T15:55:16.168971Z",
+  "generated": "2023-06-24T14:53:13.247834Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-204.0.dev"
 }
