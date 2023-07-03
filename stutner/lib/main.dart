@@ -35,7 +35,7 @@ class StutnerApp extends StatelessWidget {
           ),
         ),
       ],
-      defaultThemeId: 'custom_theme_dark',
+      //defaultThemeId: 'custom_theme_dark',
       child: ThemeConsumer(
         child: Builder(
           builder: (themeContext) => MaterialApp(

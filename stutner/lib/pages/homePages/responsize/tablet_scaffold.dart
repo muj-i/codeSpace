@@ -15,7 +15,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar,
-      backgroundColor: myBackGroundColor,
+      //backgroundColor: myBackGroundColor,
       drawer: myDrawer,
       body: Column(
         children: [

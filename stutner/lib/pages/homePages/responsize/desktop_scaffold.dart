@@ -15,7 +15,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar,
-      backgroundColor: myBackGroundColor,
+      //backgroundColor: myBackGroundColor,
       body: Row(
         children: [
           myDrawer,

@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:theme_provider/theme_provider.dart';
 //import 'package:stutner/main.dart';
 //import 'responsize/responsive_layout.dart';
 
-var myBackGroundColor = Colors.grey[300];
+//var myBackGroundColor = Colors.grey[300];
 
 var myAppBar = AppBar(
-  backgroundColor: Colors.grey[900],
-);
+    title: Text("stutner"),
+    //backgroundColor: Colors.grey[900],
+    actions: [
+      Builder(builder: (context) {
+        return IconButton(
+            icon: ThemeProvider.controllerOf(context).currentThemeId ==
+                    'custom_theme_dark'
+                ? const Icon(FontAwesomeIcons.lightbulb)
+                : const Icon(FontAwesomeIcons.solidLightbulb),
+            onPressed: () {
+              ThemeProvider.controllerOf(context).nextTheme();
+            });
+      }),
+    ]);
 
 var myDrawer = Drawer(
   backgroundColor: Colors.grey[300],
