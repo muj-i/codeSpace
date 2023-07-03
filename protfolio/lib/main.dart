@@ -1,60 +1,47 @@
 import 'package:flutter/material.dart';
 
-import 'home_screen.dart';
-
 void main() {
-  runApp(const PortfolioApp());
+  runApp(MyApp());
 }
 
-class PortfolioApp extends StatelessWidget {
-  const PortfolioApp({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.purple,
-        fontFamily: 'Noto_Sans',
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            textStyle: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              letterSpacing: .6,
-            ),
-          ),
-        ),
-        textTheme: const TextTheme(
-            // by default there are several default text styles like titleLarge
-            // you can access all of these by Theme.of(context).textTheme.yourDesireStyle
-            // even you can customize a previous style
-            titleLarge: TextStyle(color: Colors.black)),
+      title: 'My Portfolio',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Portfolio'),
       ),
-      darkTheme: ThemeData(
-        primarySwatch: Colors.teal,
-        brightness: Brightness.dark,
-        fontFamily: 'Noto_Sans',
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            textStyle: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              letterSpacing: .6,
-            ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Project 1'),
+            subtitle: Text('This is a description of Project 1.'),
           ),
-        ),
-        textTheme: const TextTheme(
-            // by default there are several default text styles like titleLarge
-            // you can access all of these by Theme.of(context).textTheme.yourDesireStyle
-            // even you can customize a previous style
-            titleLarge: TextStyle(color: Colors.teal)),
+          ListTile(
+            title: Text('Project 2'),
+            subtitle: Text('This is a description of Project 2.'),
+          ),
+          ListTile(
+            title: Text('Project 3'),
+            subtitle: Text('This is a description of Project 3.'),
+          ),
+        ],
       ),
-      themeMode: ThemeMode.light,
-      //  you can change theme by changing value .light/.dark
-      home: const HomeScreen(),
     );
   }
 }

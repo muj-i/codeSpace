@@ -1,4 +1,0 @@
-#Wed May 31 17:51:04 BDT 2023
-base.0=/Users/muj/Documents/Programming/OstadP/my-practice-projects/Flutter/protfolio/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
