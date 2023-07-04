@@ -5,22 +5,32 @@ import 'package:theme_provider/theme_provider.dart';
 //import 'responsize/responsive_layout.dart';
 
 //var myBackGroundColor = Colors.grey[300];
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+  const MyAppBar({required this.title});
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        title: Text(title),
+        //backgroundColor: Colors.grey[900],
+        actions: [
+          Builder(builder: (context) {
+            return IconButton(
+                icon: ThemeProvider.controllerOf(context).currentThemeId ==
+                        'custom_theme_dark'
+                    ? const Icon(FontAwesomeIcons.lightbulb)
+                    : const Icon(FontAwesomeIcons.solidLightbulb),
+                onPressed: () {
+                  ThemeProvider.controllerOf(context).nextTheme();
+                });
+          }),
+        ]);
+  }
 
-var myAppBar = AppBar(
-    title: Text("stutner"),
-    //backgroundColor: Colors.grey[900],
-    actions: [
-      Builder(builder: (context) {
-        return IconButton(
-            icon: ThemeProvider.controllerOf(context).currentThemeId ==
-                    'custom_theme_dark'
-                ? const Icon(FontAwesomeIcons.lightbulb)
-                : const Icon(FontAwesomeIcons.solidLightbulb),
-            onPressed: () {
-              ThemeProvider.controllerOf(context).nextTheme();
-            });
-      }),
-    ]);
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
 
 var myDrawer = Drawer(
   backgroundColor: Colors.grey[300],

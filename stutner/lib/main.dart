@@ -3,6 +3,8 @@ import 'package:stutner/pages/homePages/responsize/desktop_scaffold.dart';
 import 'package:stutner/pages/homePages/responsize/mobile_scaffold.dart';
 import 'package:stutner/pages/homePages/responsize/responsive_layout.dart';
 import 'package:stutner/pages/homePages/responsize/tablet_scaffold.dart';
+import 'package:stutner/pages/notePages/note_details.dart';
+import 'package:stutner/pages/notePages/note_taking.dart';
 import 'package:stutner/pages/task_management.dart';
 import 'package:theme_provider/theme_provider.dart';
 
@@ -53,6 +55,8 @@ class StutnerApp extends StatelessWidget {
               //     tabletScaffold: TabletScaffold(),
               //     desktopScaffold: DesktopScaffold()),
               '/todo': (context) => TaskManagementScreen(),
+              '/note': (context) => NoteListingScreen(),
+              //'/note/noteDetails': (context) => NoteDetailsScreen(notes: notes),
             },
           ),
         ),

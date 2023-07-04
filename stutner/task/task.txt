@@ -12,18 +12,18 @@ allowing them to keep their study materials organized and easily accessible.
 2- Note-taking: The app provides a built-in note-taking feature where users can create and store their digital notes,
 including text, images, and even audio recordings.
 
-3- Task Management: Users can create and manage study tasks or to-do lists,
-breaking down larger goals into smaller, more manageable tasks.
+//3- Task Management: Users can create and manage study tasks or to-do lists,
+//breaking down larger goals into smaller, more manageable tasks.
 
 4- Pomodoro Timer: The app includes a Pomodoro timer that helps users practice focused and productive study sessions.
 It allows them to set a specific study duration followed by short breaks,
 optimizing their concentration and reducing burnout.
 
-5- Progress Tracking: Users can track their study progress by marking completed tasks or
-noting the number of study hours dedicated to each subject.
+#5- Progress Tracking: Users can track their study progress by marking completed tasks or
+#noting the number of study hours dedicated to each subject.
 
-6- Reminder Notifications: The app sends reminder notifications for upcoming study sessions or
-pending tasks to help users stay on track and avoid procrastination.
+#6- Reminder Notifications: The app sends reminder notifications for upcoming study sessions or
+#pending tasks to help users stay on track and avoid procrastination.
 
 7- Performance Analytics: Study Buddy provides simple analytics or charts to visualize study patterns and
 progress over time, enabling users to identify areas of improvement and celebrate milestones.

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stutner/pages/homePages/constants.dart';
+import 'package:stutner/constants.dart';
 import 'package:stutner/utilitis/my_container.dart';
 import 'package:stutner/utilitis/my_tile.dart';
 
@@ -14,7 +14,8 @@ class _TabletScaffoldState extends State<TabletScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar,
+      appBar: MyAppBar(title: 'Stutner'),
+
       //backgroundColor: myBackGroundColor,
       drawer: myDrawer,
       body: Column(

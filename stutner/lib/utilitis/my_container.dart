@@ -58,12 +58,14 @@ class MyContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               child: InkWell(
                 borderRadius: BorderRadius.circular(5),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/note');
+                },
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
                     Image.asset(
-                      'images/logo.png',
+                      'images/note.png',
                       fit: BoxFit.fill,
                     ),
                     Align(
@@ -75,7 +77,7 @@ class MyContainer extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: const Text(
-                          'nachos',
+                          'N O T E',
                           style: TextStyle(
                             color: Colors.white,
                             backgroundColor: Colors.transparent,
@@ -156,82 +158,6 @@ class MyContainer extends StatelessWidget {
                             color: Colors.white,
                             backgroundColor: Colors.transparent,
                             fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 120.0,
-            width: 120.0,
-            child: Material(
-              borderRadius: BorderRadius.circular(5),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(5),
-                onTap: () {},
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Image.asset(
-                      'images/logo.png',
-                      fit: BoxFit.fill,
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        decoration: BoxDecoration(
-                          color: Colors.blueGrey.withAlpha(150),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: const Text(
-                          'letters',
-                          style: TextStyle(
-                            color: Colors.white,
-                            backgroundColor: Colors.transparent,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 120.0,
-            width: 120.0,
-            child: Material(
-              borderRadius: BorderRadius.circular(5),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(5),
-                onTap: () {},
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Image.asset(
-                      'images/logo.png',
-                      fit: BoxFit.fill,
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        decoration: BoxDecoration(
-                          color: Colors.blueGrey.withAlpha(150),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: const Text(
-                          'oranges',
-                          style: TextStyle(
-                            color: Colors.white,
-                            backgroundColor: Colors.transparent,
-                            fontSize: 18,
                           ),
                         ),
                       ),
