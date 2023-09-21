@@ -1,4 +1,0 @@
-#Sat Jun 24 19:30:43 BDT 2023
-base.0=/Volumes/HDD-Z/dxProgramming/codeSpace/todo/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
