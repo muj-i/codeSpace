@@ -1,0 +1,15 @@
+List<UserModel> userList = [];
+
+Future<List<UserModel>> getUserList() async {
+  final resposne =
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+  var data = jsonDecode(resposne.body.toString());
+  if (resposne.statusCode == 200) {
+    for (Map i in data) {
+      userList.add(UserModel.fromJson(i));
+    }
+    return userList;
+  } else {
+    return userList;
+  }
+}
